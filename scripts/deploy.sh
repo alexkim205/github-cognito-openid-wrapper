@@ -10,12 +10,14 @@ require_binary sam
 
 # Ensure configuration is present
 
-if [ ! -f "$PROJECT_ROOT/config.sh" ]; then
-  echo "ERROR: config.sh is missing. Copy example-config.sh and modify as appropriate."
-  echo "   cp example-config.sh config.sh"
+STAGE=$1
+
+if [ ! -f "$PROJECT_ROOT/config.$STAGE.sh" ]; then
+  echo "ERROR: config.$STAGE.sh is missing. Copy example-config.sh and modify as appropriate."
+  echo "   cp example-config.sh config.$STAGE.sh"
   exit 1
 fi
-source ./config.sh
+source ./config.$STAGE.sh
 
 
 OUTPUT_TEMPLATE_FILE="$PROJECT_ROOT/serverless-output.yml"

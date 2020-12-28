@@ -5,7 +5,7 @@ dist-web
 dist-lambda
 logs
 
-config.sh
+config.*.sh
 *.key
 *.key.pub
 serverless-output.yml
